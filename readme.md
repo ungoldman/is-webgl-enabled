@@ -1,4 +1,4 @@
-# is-webgl-enabled
+# [is-webgl-enabled](https://ungoldman.github.io/is-webgl-enabled)
 
 Detect if WebGL is enabled in the current environment.
 
