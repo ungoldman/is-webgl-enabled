@@ -1,7 +1,7 @@
 {
   "name": "is-webgl-enabled",
   "description": "Detect if WebGL is enabled in the current environment.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Nate Goldman <ungoldman@gmail.com>",
   "bugs": {
     "url": "https://github.com/ungoldman/is-webgl-enabled/issues"
