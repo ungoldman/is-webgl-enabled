@@ -1,3 +1,5 @@
+var document = require('global/document')
+
 module.exports = function () {
   var c = document.createElement('canvas')
   try {
