@@ -1,7 +1,7 @@
 var document = require('global/document')
-var isWebGlEnabled = require('../')
+var isWebGLEnabled = require('../')
 
-if (isWebGlEnabled()) {
+if (isWebGLEnabled()) {
   document.querySelector('.result').innerHTML = '🖖😁 WebGL is enabled! 😅👍'
   document.title = 'WebGL: yep'
 } else {

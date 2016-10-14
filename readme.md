@@ -23,9 +23,9 @@ npm install is-webgl-enabled
 
 ```js
 var document = require('global/document')
-var isWebGlEnabled = require('../')
+var isWebGLEnabled = require('is-webgl-enabled')
 
-if (isWebGlEnabled()) {
+if (isWebGLEnabled()) {
   document.write('WebGL is enabled! :)')
 } else {
   document.write('WebGL is not enabled! :(')
