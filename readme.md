@@ -22,18 +22,21 @@ npm install is-webgl-enabled
 ## Usage
 
 ```js
-var isWebglEnabled = require('is-webgl-enabled')
+var document = require('global/document')
+var isWebGlEnabled = require('../')
 
 if (isWebGlEnabled()) {
-  // true
+  document.write('WebGL is enabled! :)')
 } else {
-  // false
+  document.write('WebGL is not enabled! :(')
 }
 ```
 
 ## Why
 
 I saw a few different implementations on npm, but they were either poorly documented, exported a value instead of a function, or returned an inconsitent type (such as true or null). So I made one for myself that **just works™**.
+
+Also this became extra useful when my GPU got [blacklisted](https://codereview.chromium.org/2076443002/) by chromium.
 
 ## Contributing
 

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 - use `global/document` so that it also works in a non-browser environment
+- fix typo in example
 
 ## 1.0.0
 
