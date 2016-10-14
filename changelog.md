@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - use `global/document` so that it also works in a non-browser environment
 - fix typo in example
+- add browser test
 
 ## 1.0.0
 

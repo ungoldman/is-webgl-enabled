@@ -7,7 +7,9 @@
     "url": "https://github.com/ungoldman/is-webgl-enabled/issues"
   },
   "devDependencies": {
-    "standard": "^8.3.0"
+    "browserify": "^13.1.0",
+    "standard": "^8.3.0",
+    "wzrd": "^1.4.0"
   },
   "homepage": "https://github.com/ungoldman/is-webgl-enabled",
   "keywords": [
@@ -23,6 +25,12 @@
     "url": "https://github.com/ungoldman/is-webgl-enabled.git"
   },
   "scripts": {
+    "site:dev": "wzrd --path=test test/index.js:test/bundle.js",
+    "site:build": "browserify test/index.js -o test/bundle.js",
+    "site:deploy": "npm run site:build && gh-pages -d test",
     "test": "standard"
+  },
+  "dependencies": {
+    "global": "^4.3.1"
   }
 }
