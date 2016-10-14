@@ -1,4 +1,5 @@
 var document = require('global/document')
+var window = require('global/window')
 
 module.exports = function () {
   var c = document.createElement('canvas')

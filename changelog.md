@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-- use `global/document` so that it also works in a non-browser environment
+- use `global/document` and `global/window` to support non-browser environments
 - fix typo in example
 - add browser test
 
