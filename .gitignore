@@ -1,3 +1,4 @@
 node_modules
 *.log
-test/bundle.js
+dist
+coverage

@@ -2,36 +2,52 @@
   "name": "is-webgl-enabled",
   "description": "Detect if WebGL is enabled in the current environment.",
   "version": "1.0.2",
-  "author": "Nate Goldman <ungoldman@gmail.com>",
+  "author": "Nate Goldman <ungoldman@gmail.com> (https://ungoldman.com/)",
   "bugs": {
     "url": "https://github.com/ungoldman/is-webgl-enabled/issues"
   },
-  "dependencies": {
-    "global": "^4.3.1"
-  },
   "devDependencies": {
-    "browserify": "^13.1.0",
-    "standard": "^8.3.0",
-    "wzrd": "^1.4.0"
+    "@biomejs/biome": "^2.0.0",
+    "@types/node": "^22.19.21",
+    "typescript": "^6.0.0"
   },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/ungoldman/is-webgl-enabled",
   "keywords": [
     "detect",
-    "disabled",
     "enabled",
-    "webgl"
+    "webgl",
+    "webgl2"
   ],
   "license": "ISC",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ungoldman/is-webgl-enabled.git"
+    "url": "git+https://github.com/ungoldman/is-webgl-enabled.git"
   },
   "scripts": {
-    "site:build": "browserify test/index.js -o test/bundle.js",
-    "site:deploy": "npm run site:build && gh-pages -d test",
-    "site:dev": "wzrd --path=test test/index.js:bundle.js",
-    "site:test": "cd test && python -m SimpleHTTPServer 8000",
-    "test": "standard"
-  }
+    "build": "tsc -p tsconfig.build.json",
+    "coverage": "node --test --experimental-test-coverage --test-coverage-exclude='test/**' --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 test/*.test.ts",
+    "format": "biome check --write .",
+    "lint": "biome check .",
+    "prebuild": "rm -rf dist",
+    "prepublishOnly": "npm run build",
+    "test": "npm run lint && npm run typecheck && npm run build && node --test test/*.test.ts",
+    "typecheck": "tsc"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts"
 }
